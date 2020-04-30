@@ -61,11 +61,7 @@ Empowering users to take control of their workout schedules by planning and mana
 
 # APIs
 
-## Authentication API
 
-### Auth0
-
-Auth0 is a secure and universal service which ensures authentication and authorization functionality.
 
 ## wger - Workout Manager API
 
@@ -90,9 +86,9 @@ Free and open source, and it provides a lot of data for us.
 
 # Testing
 
-## Jest
+## react-testing-library
 
-Jest manages metadata about your source code so it can learn how to run only the relevant test files when a source code file is changed. Jest's interactive watch mode will show you if you're filtering for any file types.
+The React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
 
 # Installation Instructions
 
