@@ -11,10 +11,10 @@ import Calendar from '../calendar/Calendar';
 export default function Router(props) {
   return (
     <div>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/dashboard' component={Dashboard} />
-      <Route exact path='/onboarding' component={Onboarding} />
-      <Route exact path='/schedule' component={Calendar} />     
+      <Route exact path="/" component={Home} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/onboarding" component={Onboarding} />
+      <Route exact path="/schedule" component={Calendar} />
     </div>
   );
 }

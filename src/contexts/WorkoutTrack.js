@@ -1,5 +1,5 @@
-import { createContext } from "react"
+import { createContext } from 'react';
 
-const WorkoutTrack = createContext()
+const WorkoutTrack = createContext();
 
 export default WorkoutTrack;

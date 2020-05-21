@@ -8,13 +8,13 @@ import '@fullcalendar/daygrid/main.css';
 const Calendar = () => {
   return (
     <div>
-      <div className='calendar_main'>
-        <h1 className='calendar_headline'>Schedule</h1>
+      <div className="calendar_main">
+        <h1 className="calendar_headline">Schedule</h1>
       </div>
 
-      <div className='calendar-container'>
+      <div className="calendar-container">
         <FullCalendar
-          defaultView='dayGridMonth'
+          defaultView="dayGridMonth"
           plugins={[dayGridPlugin]}
           events={[
             { title: 'Biceps', date: '2020-04-28' },
