@@ -15,7 +15,7 @@ const Dashboard = () => {
         Create a custom workout plan
       </button>
       <button type='submit' className="dashboard_btn" onClick={() => history.push("/")}>
-        Find a prefab plan
+        Find a prefab workout plan
       </button>
       </div>
       <div>
