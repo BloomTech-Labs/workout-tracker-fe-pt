@@ -1,34 +1,34 @@
-import React, {useState} from 'react';
-import {axiosWithAuth} from '../Authentication/axiosWithAuth'
+import React, { useState } from 'react';
+import { axiosWithAuth } from '../authentication/axiosWithAuth';
 import { useForm } from "react-hook-form";
-
+                                 
 export default function Login(props) {
+  const { errors } = useForm();
+  
+  const [user, getUser] = useState({
 
-const { errors } = useForm();
-
-const [user, getUser] = useState({
     username: '',
-    password: ''
-})
+    password: '',
+  });
 
-const handleChanges = e => {
-    getUser({...user, [e.target.name]: e.target.value})
-}
+  const handleChanges = (e) => {
+    getUser({ ...user, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     axiosWithAuth()
-    .post('/auth/login', user)
-    .then(res => {
-      console.log(res.data.token)
+      .post('/auth/login', user)
+      .then((res) => {
+        console.log(res.data.token);
         localStorage.setItem('token', res.data.token);
         props.history.push('/protected');
         console.log('login form submitted');
-    })
-    .catch(err => {
+      })
+      .catch((err) => {
         localStorage.removeItem('token');
         console.log('Invalid Login', err);
-    })
+      });
   };
 
   return (
@@ -51,7 +51,7 @@ const handleChanges = e => {
       />
       {errors.password && <p>This is required</p>}
 
-      <input type='submit' />
+      <input type="submit" />
     </form>
   );
 }
