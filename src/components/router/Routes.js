@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 //components
-import Home from '../home/home';
+import Register from '../signup/signup';
 import Onboarding from '../onboarding/Onboard';
 import Dashboard from '../dashboard/Dashboard';
 import Calendar from '../calendar/Calendar';
@@ -16,7 +16,7 @@ export default function Router(props) {
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/onboarding" component={Onboarding} />
       <Route exact path="/schedule" component={Calendar} />
-      <Route exact path="/account" component={Home} />
+      <Route exact path="/register" component={Register} />
     </div>
   );
 }
