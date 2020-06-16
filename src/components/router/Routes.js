@@ -7,6 +7,7 @@ import Onboarding from '../onboarding/Onboard';
 import Dashboard from '../dashboard/Dashboard';
 import Calendar from '../calendar/Calendar';
 import LandingPage from '../landingpage/LandingPage';
+import Profile from '../profile/Profile';
 
 // protected comopnents will be used with PrivateRoute. You can look at what the code is doing later.
 export default function Router(props) {
@@ -17,6 +18,7 @@ export default function Router(props) {
       <Route exact path="/onboarding" component={Onboarding} />
       <Route exact path="/schedule" component={Calendar} />
       <Route exact path="/account" component={Home} />
+      <Route exact path="/profile" component={Profile} />
     </div>
   );
 }
