@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './Header';
+import Header from './header/Header';
+import { HeaderSection } from './style';
 
 const initialUserInfo = {
   name: '',
@@ -10,20 +11,6 @@ const initialUserInfo = {
 
 export default function Profile() {
   const [userInfo, setUserInfo] = useState(initialUserInfo);
-
-  const getUserInfo = () => {
-    axios
-      .get(
-        'https://api.nasa.gov/planetary/apod?api_key=vNjINdk9XdxPhvsS9Dbzbp5tyIbhb1l0RtFknZe1'
-      )
-      .then((res) => {
-        setUserInfo(res.data);
-        console.log('res.data', res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const postUserInfo = (user) => {
     axios
@@ -60,14 +47,10 @@ export default function Profile() {
     postUserInfo(user);
   };
 
-  useEffect(() => {
-    getUserInfo();
-  }, []);
-
   return (
-    <>
+    <HeaderSection>
       <Header />
-      <form className="form-container" onSubmit={onSubmit}>
+      {/* <form className="form-container" onSubmit={onSubmit}>
         <label>Name</label>
         <input
           type="text"
@@ -80,7 +63,7 @@ export default function Profile() {
           type="text"
           name="location"
           onChange={handleChanges}
-          value={userInfo.location}
+          value={userInfo.affiliate}
         />
         <label>Bio</label>
         <input
@@ -90,7 +73,7 @@ export default function Profile() {
           value={userInfo.bio}
         />
         <button>Post</button>
-      </form>
-    </>
+      </form> */}
+    </HeaderSection>
   );
 }

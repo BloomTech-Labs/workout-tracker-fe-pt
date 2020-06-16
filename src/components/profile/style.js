@@ -1,3 +1,3 @@
 import styled from 'styled-components';
 
-export const HeaderSection = styled.section``;
+export const HeaderSection = styled.div``;

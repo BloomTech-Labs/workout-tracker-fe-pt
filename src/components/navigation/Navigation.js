@@ -1,10 +1,9 @@
 import React from 'react';
 
-
 const Navigation = () => {
   return (
     <div>
-      <div className="App">
+      {/* <div className="App">
         <div>
           <a href="">Home</a>
         </div>
@@ -14,7 +13,7 @@ const Navigation = () => {
         <div>
           <a href="">Contact</a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
