@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { axiosWithAuth } from '../../authentication/axiosWithAuth';
+import React, { useContext } from 'react';
+import ProfileContext from '../../../contexts/ProfileContext';
 import LandingNav from '../../../containers/landingnav/landingnav';
 import { InfoSection, TextContainer, Text, Image } from './style';
 
 const Header = () => {
-  const [userInfo, setUserInfo] = useState({});
-
-  const getUserInfo = () => {
-    axiosWithAuth()
-      .get('https://frozen-hamlet-18508.herokuapp.com/api/users/4')
-      .then((res) => {
-        setUserInfo(res.data);
-        console.log('res.data', res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    getUserInfo();
-  }, []);
-
+  const { userInfo } = useContext(ProfileContext);
   return (
     <>
       <LandingNav />
