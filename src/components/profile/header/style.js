@@ -20,5 +20,6 @@ export const Text = styled.p`
 
 export const Image = styled.img`
   width: 100px;
-  border-radius: 25%;
+  border-radius: 100%;
+  border: 4px solid #e8f1fc;
 `;
