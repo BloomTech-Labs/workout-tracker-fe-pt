@@ -15,7 +15,7 @@ exclude_patterns:
   - '**/*.spec.js'
   - '**/*.spec.jsx'
   - '**/*.spec.ts'
-  - '**/*.sp  ec.tsx'
+  - '**/*.spec.tsx'
   - '**/vendor/'
   - '**/node_modules/'
   - 'package-lock.json'
