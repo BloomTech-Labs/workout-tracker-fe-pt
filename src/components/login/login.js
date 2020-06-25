@@ -18,10 +18,17 @@ import {
   RegisterText,
   Span,
   StyledLink,
+  LoginImage,
+  Form,
+  SmallCircle,
+  LargeCircle,
 } from "./style";
 
 import Circle from "../../assets/loginpage/circle.svg";
 import CircleSmall from "../../assets/loginpage/circlesmall.svg";
+import PasswordImage from "../../assets/loginpage/password.svg";
+import SmFullCircle from "../../assets/loginpage/smfullsircle.svg";
+import LgFullCircle from "../../assets/loginpage/smfullsircle.svg";
 
 export default function Login() {
   const history = useHistory();
@@ -56,11 +63,13 @@ export default function Login() {
           Fit<LogoText>Tracker</LogoText>
           <Circles src={Circle} />
           <Circles2 src={CircleSmall} />
+          <SmallCircle src={SmFullCircle} />
         </Logo>
       </LogoContainer>
       <FormContainer>
-        <Title> Login </Title>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <LoginImage src={PasswordImage} />
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Title> Login </Title>
           <Label htmlFor="email"> Email </Label>
           <Input
             type="text"
@@ -99,7 +108,7 @@ export default function Login() {
             <br />
             {errors.email && errors.email.message}
           </ErrorMessages>
-        </form>
+        </Form>
       </FormContainer>
     </>
   );

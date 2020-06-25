@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 export const LogoContainer = styled.section`
   text-align: center;
   margin: 2rem 0 7.5rem 0;
+  @media (min-width: 768px) {
+    text-align: start;
+    margin: 5rem;
+  }
 `;
 export const Logo = styled.h2`
   font-size: 48px;
@@ -26,6 +30,9 @@ export const Title = styled.p`
   font-size: 30px;
   font-weight: bold;
   margin: 15rem 0 2rem 0;
+  @media (min-width: 768px) {
+    margin: 1rem 0 2rem;
+  }
 `;
 
 export const FormContainer = styled.section`
@@ -35,8 +42,16 @@ export const FormContainer = styled.section`
   justify-content: center;
   width: 80%;
   margin: 0 auto;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 `;
 
+export const Form = styled.form`
+  @media (min-width: 768px) {
+  }
+`;
 export const Input = styled.input`
   margin-bottom: 3rem;
   border: 0;
@@ -52,18 +67,34 @@ export const Label = styled.label`
   color: #8b8b8b;
 `;
 
+export const LoginImage = styled.img`
+  display: none;
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 500px;
+    display: block;
+  }
+`;
+
 //Background
 
 export const Circles = styled.img`
   position: absolute;
   left: -21px;
   top: -39px;
+  @media (min-width: 768px) {
+    width: 805px;
+    height: 805px;
+  }
 `;
 
 export const Circles2 = styled.img`
   position: absolute;
   top: -1px;
   right: 0px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SignInButton = styled.div`
@@ -102,4 +133,14 @@ export const Span = styled.span`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   margin-left: 0.2rem;
+`;
+
+export const SmallCircle = styled.img`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 22.5rem;
+    left: 53rem;
+  }
 `;
