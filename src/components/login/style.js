@@ -62,8 +62,8 @@ export const Circles = styled.img`
 
 export const Circles2 = styled.img`
   position: absolute;
-  left: 324px;
-  top: 0;
+  top: -1px;
+  right: 0px;
 `;
 
 export const SignInButton = styled.div`
