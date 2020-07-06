@@ -1,47 +1,61 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const InfoSection = styled.section`
-  border-bottom: 6px solid white;
+export const MainContainer = styled.div`
+  width: 92%;
+  margin: 0 auto;
 `;
-export const TextContainer = styled.div`
-  background: #277fe5;
-  width: 100%;
+
+export const HeaderSection = styled.section`
+  height: 100px;
+  background: #3871d1;
+`;
+
+export const AvatarContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
 `;
 
-export const Text = styled.p`
-  color: white;
-  font-weight: 500;
-  font-family: Montserrat;
-  margin-top: 0.5rem;
-`;
-
-export const Image = styled.img`
-  width: 100px;
-  border-radius: 100%;
-  border: 4px solid #e8f1fc;
-`;
-
-export const ImageContainer = styled.div`
-  display: contents;
-`;
-
-export const ImageText = styled.a`
-  font-family: Montserrat;
-  font-size: 12px;
-  background: #2a2b2b;
-  color: white;
-  text-align: center;
+export const AvatarImage = styled.img`
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
   position: relative;
-  bottom: 1rem;
-  border-radius: 1rem;
-  padding: 6px;
-  text-decoration: none;
-  &:hover {
-    background: #1d5fab;
-  }
+  bottom: 10px;
+  left: 10px;
+  margin-right: 2rem;
 `;
+
+export const Name = styled.p`
+  margin-top: 1.5rem;
+  font-size: 20px;
+  font-weight: 600;
+`;
+
+export const Verify = styled.img`
+  width: 13px;
+  height: 13px;
+  margin-left: 5px;
+  filter: grayscale(100%);
+`;
+
+export const MainInfo = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+
+export const SubInfo = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+
+export const Bio = styled.p``;
+
+export const EditButton = styled.button`
+  background: #00000057;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+`;
+
+export const ButtonContainer = styled.div``;

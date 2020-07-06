@@ -1,33 +1,41 @@
-import React, { useContext } from 'react';
-import ProfileContext from '../../../contexts/ProfileContext';
-import LandingNav from '../../../containers/landingnav/landingnav';
+import React, { useContext } from "react";
+import ProfileContext from "../../../contexts/ProfileContext";
 import {
-  InfoSection,
-  TextContainer,
-  Text,
-  ImageContainer,
-  Image,
-  ImageText,
-} from './style';
-import Avatar from '../../../assets/avatarmale.svg';
+  MainContainer,
+  HeaderSection,
+  AvatarContainer,
+  AvatarImage,
+  Name,
+  Verify,
+  MainInfo,
+  SubInfo,
+  Bio,
+  EditButton,
+  ButtonContainer,
+} from "./style";
+import VerifyBadge from "../../../assets/profile/verify.svg";
 
 const Header = () => {
   const { userInfo } = useContext(ProfileContext);
   return (
     <>
-      <LandingNav />
-      <InfoSection>
-        <TextContainer>
-          <ImageContainer>
-            <Image src={Avatar}></Image>
-            <ImageText href="/editprofile">Edit Profile</ImageText>
-          </ImageContainer>
-          <Text> {userInfo.username} </Text>
-          <Text>{userInfo.bio}</Text>
-          <Text> {userInfo.email}</Text>
-          <Text>XP: {userInfo.xp}</Text>
-        </TextContainer>
-      </InfoSection>
+      <HeaderSection>
+        <ButtonContainer>
+          <EditButton> Settings</EditButton>
+        </ButtonContainer>
+      </HeaderSection>
+      <MainContainer>
+        <AvatarContainer>
+          <AvatarImage src="https://images.pexels.com/photos/3927387/pexels-photo-3927387.jpeg?cs=srgb&dl=concept-of-sports-training-3927387.jpg&fm=jpg" />
+          <MainInfo>
+            <Name>{userInfo.username}</Name>
+            <Verify src={VerifyBadge} />
+          </MainInfo>
+        </AvatarContainer>
+        <SubInfo>
+          <Bio> {userInfo.bio}</Bio>
+        </SubInfo>
+      </MainContainer>
     </>
   );
 };
