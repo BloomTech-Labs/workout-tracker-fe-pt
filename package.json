@@ -2,6 +2,10 @@
   "name": "workout-tracker",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "yarn": "1.22.4",
+    "node": "12.14.1"
+  },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.6.4",
     "@fullcalendar/core": "^4.4.0",
