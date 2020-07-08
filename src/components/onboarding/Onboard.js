@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
-import { withRouter } from 'react-router-dom';
 
 const GoalsSchema = Yup.object().shape({
   goals: Yup.string().required('Please select a Goal.'),
@@ -91,4 +90,4 @@ class Onboarding extends React.Component {
   }
 }
 
-export default withRouter(Onboarding);
+export default Onboarding;
