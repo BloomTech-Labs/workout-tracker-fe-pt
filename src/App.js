@@ -17,43 +17,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-
-          <Route path="/register">
-            <Signup />
-          </Route>
-
-          <Route path="/login">
-            <Login />
-          </Route>
-
-          <Route path="/public">
-            <ViewableWorkouts />
-          </Route>
-
-          <ProtectedRoute path="/dashboard">
-            <Dashboard />
-          </ProtectedRoute>
-
-          <ProtectedRoute path="/createworkout">
-            <WorkoutForm />
-          </ProtectedRoute>
-
-          <ProtectedRoute path="/profile">
-            <Profile />
-          </ProtectedRoute>
-
-          <ProtectedRoute path="/editprofile">
-            <ProfileForm />
-          </ProtectedRoute>
-
-          <ProtectedRoute path="/calendar">
-            <Calendar />
-          </ProtectedRoute>
-        </Switch>
+        <Route exact path="/" component={LandingPage} exact />
       </Router>
     </div>
   );
