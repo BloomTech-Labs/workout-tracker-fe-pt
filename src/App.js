@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {  Route } from "react-router-dom";
 
 //components
 import Signup from "./components/signup/signup";
@@ -12,13 +12,27 @@ import Profile from "./components/profile/Profile";
 import LandingPage from "./components/landingpage/LandingPage";
 import ViewableWorkouts from "./components/dashboard/ViewableWorkouts";
 import ProfileForm from "./components/profile/form/ProfileForm";
+import Register from "./components/signup/signup";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Route exact path="/" component={LandingPage} exact />
-      </Router>
+            <Route exact path="/" component={LandingPage}/>
+
+            <Route path="/register" component={Register}/>
+
+            <Route path="/login" component={Login}/>
+
+            <Route path="/public" component={ViewableWorkouts}/>
+
+            <ProtectedRoute path="/dashboard" component={Dashboard}/>
+
+            <ProtectedRoute path="/createworkout" component={WorkoutForm}/>
+
+            <ProtectedRoute path="/profile" component={Profile}/>
+
+            <ProtectedRoute path="/editprofile" component={ProfileForm}/>
+            <ProtectedRoute path="/calendar" component={Calendar}/>
     </div>
   );
 }
