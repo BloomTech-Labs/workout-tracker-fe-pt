@@ -40,11 +40,13 @@
     "yarn": "^1.22.4",
     "yup": "^0.29.0"
   },
+
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "heroku-postbuild": "npm run build"
+    "test": "jest --watchAll",
+    "coverage": "CI=true yarn test --coverage || true",
+    "heroku-postbuild": "yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
