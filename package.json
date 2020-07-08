@@ -41,12 +41,10 @@
     "yup": "^0.29.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "jest --watchAll",
-    "eject": "react-scripts eject",
-    "coverage": "CI=true yarn test --coverage || true",
-    "server": "nodemon index.js"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
