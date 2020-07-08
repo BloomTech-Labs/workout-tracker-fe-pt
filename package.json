@@ -49,8 +49,7 @@
     "build": "react-scripts build",
     "test": "jest --watchAll",
     "eject": "react-scripts eject",
-    "coverage": "CI=true yarn test --coverage || true",
-    "server": "nodemon index.js"
+    "coverage": "CI=true yarn test --coverage || true"
   },
   "eslintConfig": {
     "extends": "react-app"
