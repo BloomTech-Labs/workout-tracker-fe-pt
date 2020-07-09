@@ -10,7 +10,6 @@ export default function Profile() {
   const [userInfo, setUserInfo] = useState({});
 
   const getUserInfo = () => {
-
     //provides the info for the specific user that is logged in.
     const { subject } = decode(localStorage.getItem("token"));
     axiosWithAuth()
@@ -32,7 +31,7 @@ export default function Profile() {
     <ProfileContext.Provider value={{ userInfo }}>
       <HeaderSection>
         <Header>
-            <ProfileForm/>
+          <ProfileForm />
         </Header>
       </HeaderSection>
     </ProfileContext.Provider>
