@@ -32,13 +32,14 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
     "react-use-auth": "^0.5.3",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.0",
     "webfontloader": "^1.6.28",
     "yup": "^0.29.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "serve -s build",
     "test": "react-scripts test --watchAll --coverage",
     "eject": "react-scripts eject",
     "coverage": "CI=true yarn test --coverage || true"
