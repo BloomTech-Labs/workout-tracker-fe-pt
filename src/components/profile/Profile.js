@@ -10,6 +10,7 @@ export default function Profile() {
   const [userInfo, setUserInfo] = useState({});
 
   const getUserInfo = () => {
+
     //provides the info for the specific user that is logged in.
     const { subject } = decode(localStorage.getItem("token"));
     axiosWithAuth()
