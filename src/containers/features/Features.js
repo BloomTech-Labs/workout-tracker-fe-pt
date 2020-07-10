@@ -16,17 +16,21 @@ import {
   CtaSection,
 } from "./style";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import WomanExercise from "../../assets/landingpage/womanexercise.svg";
 import Schedule from "../../assets/landingpage/schedule.svg";
 import GuyCooking from "../../assets/landingpage/guycooking.svg";
 import CloudSync from "../../assets/landingpage/cloudsync.svg";
 
 const Features = () => {
+  AOS.init();
   return (
     <>
       <section>
         <ImageContainer>
-          <MainImage src={WomanExercise} alt="woman excersise"></MainImage>
+          <MainImage src={WomanExercise} alt="woman excersise" />
           <FeatureTextContainer>
             <SubText>
               Find the exercises you need to make your own workout plans
@@ -39,7 +43,9 @@ const Features = () => {
           </FeatureTextContainer>
         </ImageContainer>
         <ImageContainer2>
-          <MainImage src={Schedule} alt="Schedule"></MainImage>
+          <div data-aos="fade-up">
+            <MainImage src={Schedule} alt="Schedule" />
+          </div>
           <FeatureTextContainer>
             <SubText>
               Find the exercises you need to make your own workout plans
@@ -52,7 +58,9 @@ const Features = () => {
           </FeatureTextContainer>
         </ImageContainer2>
         <ImageContainer>
-          <MainImage src={GuyCooking} alt="Cooking"></MainImage>
+          <div data-aos="fade-up">
+            <MainImage src={GuyCooking} alt="Cooking" />
+          </div>
           <FeatureTextContainer>
             <SubText>
               Find the exercises you need to make your own workout plans
@@ -65,7 +73,9 @@ const Features = () => {
           </FeatureTextContainer>
         </ImageContainer>
         <ImageContainer2>
-          <MainImage src={CloudSync} alt="Share"></MainImage>
+          <div data-aos="fade-up">
+            <MainImage src={CloudSync} alt="Share" />
+          </div>
           <FeatureTextContainer>
             <SubText>
               Find the exercises you need to make your own workout plans
