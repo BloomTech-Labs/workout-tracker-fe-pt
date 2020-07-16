@@ -28,7 +28,7 @@
         # A GitHub action to setup Node.js
         - uses: actions/setup-node@master
           with:
-            node-version: "12"
+            node-version: "12.14.1"
 
         # Run the NPM install command before proceeding
         - run: npm install
@@ -42,7 +42,6 @@
             # Run our `coverage` script in our `package.json`
             coverageCommand: npm run coverage
             # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-            coverageLocations: |
-              ${{github.workspace}}/coverage/clover.xml:clover"
+            coverageLocations: "./coverage/clover.xml:clover"
             # Great for troubleshooting
             debug: true
