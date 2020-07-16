@@ -1,4 +1,3 @@
-  ```yaml
   # The name of the workflow
   name: build
 
@@ -46,4 +45,3 @@
             coverageLocations: "./coverage/clover.xml:clover"
             # Great for troubleshooting
             debug: true
-    ```
