@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Header from "./header/Header";
 import ProfileContext from "../../contexts/ProfileContext";
 import { axiosWithAuth } from "../authentication/axiosWithAuth";
 import { HeaderSection } from "./style";
 import { decode } from "jsonwebtoken";
 import NavigationBar from "../navigationbar/navigationbar";
 import ProfileForm from "./form/ProfileForm";
+import ProfileNav from "./profilenav/ProfileNav";
 
 export default function Profile() {
   const [userInfo, setUserInfo] = useState({});
@@ -31,11 +31,7 @@ export default function Profile() {
   return (
     <ProfileContext.Provider value={{ userInfo }}>
       <NavigationBar />
-      <HeaderSection>
-        <Header>
-          <ProfileForm />
-        </Header>
-      </HeaderSection>
+      <ProfileNav/>
     </ProfileContext.Provider>
   );
 }
