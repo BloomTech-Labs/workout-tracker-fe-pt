@@ -1,44 +1,28 @@
 import React, { useContext } from "react";
-import {
-    AsideTitle, Bio,
-    ChangePhotoButton,
-    Links,
-    Logo,
-    LogoText,
-    Navigation,
-    ProfileAside,
-    RightSide,
-    SubNav, UserName
-} from "./style";
+import { Links, Logo, LogoText, Navigation, RightSide, SubNav } from "./style";
 import ProfileContext from "../../../contexts/ProfileContext";
-import DefaultAvatar from "../../../assets/profilepage/defaultavatar.svg"
-import ProfilePic from "../../../assets/profilepage/profilepic.svg";
+import DefaultAvatar from "../../../assets/profilepage/defaultavatar.svg";
 const ProfileNav = () => {
   const { userInfo } = useContext(ProfileContext);
 
   return (
-      <>
-    <Navigation>
-        <Logo>Welcome! <LogoText>{userInfo.username}</LogoText></Logo>
+    <>
+      <Navigation>
+        <Logo>
+          Welcome! <LogoText>{userInfo.username}</LogoText>
+        </Logo>
         <RightSide>
-            <input type="text" placeholder="Type something..."></input>
-            <img src={DefaultAvatar}/>
+          <input type="text" placeholder="Type something..."></input>
+          <img src={DefaultAvatar} />
         </RightSide>
-    </Navigation>
+      </Navigation>
       <SubNav>
-          <Links> Edit Profile </Links>
-          <Links> Account Information </Links>
-          <Links> Security </Links>
-          <Links> Payment Information </Links>
+        <Links> Edit Profile </Links>
+        <Links> Account Information </Links>
+        <Links> Security </Links>
+        <Links> Payment Information </Links>
       </SubNav>
-          <ProfileAside>
-              <AsideTitle> Profile </AsideTitle>
-              <img src={ProfilePic}/>
-              <UserName>{userInfo.username}</UserName>
-              <Bio>{userInfo.bio}</Bio>
-              <ChangePhotoButton> Change Photo </ChangePhotoButton>
-          </ProfileAside>
-          </>
+    </>
   );
 };
 

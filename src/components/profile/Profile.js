@@ -6,6 +6,7 @@ import { decode } from "jsonwebtoken";
 import NavigationBar from "../navigationbar/navigationbar";
 import ProfileForm from "./form/ProfileForm";
 import ProfileNav from "./profilenav/ProfileNav";
+import ProfileSidebar from "./profilesidebar/ProfileSidebar";
 
 export default function Profile() {
   const [userInfo, setUserInfo] = useState({});
@@ -31,7 +32,8 @@ export default function Profile() {
   return (
     <ProfileContext.Provider value={{ userInfo }}>
       <NavigationBar />
-      <ProfileNav/>
+      <ProfileNav />
+      <ProfileSidebar />
     </ProfileContext.Provider>
   );
 }
