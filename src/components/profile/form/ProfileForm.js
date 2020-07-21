@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import { axiosWithAuth } from "../../authentication/axiosWithAuth";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -10,11 +10,14 @@ import {
   Label,
   PageTitle,
 } from "./style";
+import Profile from "../Profile";
+import ProfileContext from "../../../contexts/ProfileContext";
 
 const ProfileForm = (props) => {
   console.log("props", props);
   const { register, errors, handleSubmit } = useForm();
   const [editProfile, setEditProfile] = useState({});
+  const {userInfo, setUserInfo} = useContext(ProfileContext);
 
   let history = useHistory();
   const editProfileInfo = () => {
@@ -37,8 +40,7 @@ const ProfileForm = (props) => {
 
   const onSubmit = (e) => {
     console.log(e);
-    editProfileInfo(editProfile);
-    setEditProfile({ bio: "" });
+    setUserInfo(editProfile);
     history.push("/profile");
   };
 

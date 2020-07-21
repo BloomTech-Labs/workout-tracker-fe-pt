@@ -30,7 +30,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <ProfileContext.Provider value={{ userInfo }}>
+    <ProfileContext.Provider value={{ userInfo, setUserInfo }}>
       <NavigationBar />
       <ProfileNav />
       <ProfileSidebar />

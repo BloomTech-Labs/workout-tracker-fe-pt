@@ -12,7 +12,7 @@ export const Navigation = styled.nav`
   }
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled.div`
   display: flex;
   justify-content: center;
   font-size: 24px;
@@ -35,6 +35,7 @@ export const RightSide = styled.div`
 export const SubNav = styled.nav`
   display: none;
   @media (min-width: 768px) {
+  display: block;
     border-bottom: 2px solid #dddddd;
     margin-top: 8rem;
   }
@@ -45,4 +46,13 @@ export const Links = styled.a`
   line-height: 50px;
   font-size: 18px;
   font-weight: 500;
+`;
+
+// Search Bar
+export const Input = styled.input`
+width: 414px;
+border-radius: 29px;
+background: #F6F6F6;
+border: none;
+padding: 10px;
 `;

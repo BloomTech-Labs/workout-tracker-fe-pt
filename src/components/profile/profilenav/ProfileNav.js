@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Links, Logo, LogoText, Navigation, RightSide, SubNav } from "./style";
+import {Input, Links, Logo, LogoText, Navigation, RightSide, SubNav} from "./style";
 import ProfileContext from "../../../contexts/ProfileContext";
 import DefaultAvatar from "../../../assets/profilepage/defaultavatar.svg";
 const ProfileNav = () => {
@@ -12,7 +12,7 @@ const ProfileNav = () => {
           Welcome! <LogoText>{userInfo.username}</LogoText>
         </Logo>
         <RightSide>
-          <input type="text" placeholder="Type something..."></input>
+          <Input type="text" placeholder="Type something..."/>
           <img src={DefaultAvatar} />
         </RightSide>
       </Navigation>
