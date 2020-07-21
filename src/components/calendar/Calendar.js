@@ -13,12 +13,32 @@ import { axiosWithAuth } from "../authentication/axiosWithAuth";
 const Calendar = () => {
   const calendarComponentRef = React.createRef();
 
+  const [workoutEvent, setWorkoutEvent] = useState([]);
+
   const [calendarEvent, setCalendarEvent] = useState([
     {
       event: "Current Event",
       start: new Date(),
     },
   ]);
+
+  const getDates = () => {
+    const dates = axiosWithAuth()
+      .get(`https://frozen-hamlet-18508.herokuapp.com/api/workouts`)
+      .then((res) => {
+        const info = [];
+        res.data.message.forEach((v) => {
+          info.push({ title: v.workout_title, date: v.workout_date });
+        });
+        setWorkoutEvent(info);
+      })
+      .catch((err) => {
+        console.log("error in Calendar component", err);
+      });
+  };
+  useEffect(() => {
+    getDates();
+  }, []);
 
   const handleDateClick = (arg) => {
     if (
@@ -56,7 +76,7 @@ const Calendar = () => {
             }}
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             ref={calendarComponentRef}
-            events={calendarEvent}
+            events={workoutEvent}
             dateClick={handleDateClick}
           />
         </div>
