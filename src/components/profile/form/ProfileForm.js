@@ -70,7 +70,7 @@ const ProfileForm = () => {
                     label="bio"
                     name="bio"
                     htmlFor="bio"
-                    placeholder="Update Bio"
+                    placeholder={userInfo.bio}
                     onChange={handleChange}
                     ref={register({
                         minLength: {
@@ -89,7 +89,7 @@ const ProfileForm = () => {
                     label="username"
                     name="username"
                     htmlFor="username"
-                    placeholder="Update Username"
+                    placeholder={userInfo.username}
                     onChange={handleChange}
                     ref={register({
                         minLength: {
@@ -108,7 +108,7 @@ const ProfileForm = () => {
                     label="email"
                     name="email"
                     htmlFor="email"
-                    placeholder="Update Email"
+                    placeholder={userInfo.email}
                     onChange={handleChange}
                     ref={register({
                         minLength: {
