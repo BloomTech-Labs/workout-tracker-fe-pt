@@ -11,16 +11,18 @@ export const Container = styled.section`
 `;
 
 export const FormContainer = styled.div`
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
 `;
 
 export const ProfileAside = styled.aside`
   border-right: 2px solid #dddddd;
-  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  padding: 1rem;
 `;
 
 export const AsideTitle = styled.h3`
@@ -42,7 +44,7 @@ export const ChangePhotoButton = styled.button`
   font-weight: bold;
   color: white;
   font-family: Montserrat;
-  margin-top: 10rem;
+  margin-top: 8rem;
 `;
 
 export const UserName = styled.p`

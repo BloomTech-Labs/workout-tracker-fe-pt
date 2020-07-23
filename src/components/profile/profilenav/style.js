@@ -56,3 +56,8 @@ background: #F6F6F6;
 border: none;
 padding: 10px;
 `;
+
+export const SearchIcons = styled.img `
+position: relative;
+right: 3rem;
+`

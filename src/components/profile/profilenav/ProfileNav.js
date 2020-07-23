@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import {Input, Links, Logo, LogoText, Navigation, RightSide, SubNav} from "./style";
+import {Input, Links, Logo, LogoText, Navigation, RightSide, SearchIcons, SubNav} from "./style";
 import ProfileContext from "../../../contexts/ProfileContext";
 import DefaultAvatar from "../../../assets/profilepage/defaultavatar.svg";
+import SearchIcon from "../../../assets/profilepage/searchicon.svg";
 const ProfileNav = () => {
   const { userInfo } = useContext(ProfileContext);
 
@@ -13,6 +14,8 @@ const ProfileNav = () => {
         </Logo>
         <RightSide>
           <Input type="text" placeholder="Type something..."/>
+            <SearchIcons src={SearchIcon}/>
+
           <img src={DefaultAvatar} />
         </RightSide>
       </Navigation>
