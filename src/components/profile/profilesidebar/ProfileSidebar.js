@@ -20,7 +20,7 @@ const ProfileSidebar = () => {
       <Container>
         <ProfileAside>
           <AsideTitle> Profile </AsideTitle>
-          <img src={ProfilePic} />
+          <img src={ProfilePic} alt="Profile Avatar" />
           <UserName>{userInfo.username}</UserName>
           <Bio>{userInfo.bio}</Bio>
           <ChangePhotoButton> Change Photo </ChangePhotoButton>

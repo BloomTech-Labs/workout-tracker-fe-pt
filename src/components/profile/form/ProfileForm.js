@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { axiosWithAuth } from "../../authentication/axiosWithAuth";
-import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import {
   ButtonMobileContainer,
@@ -32,7 +31,7 @@ const ProfileForm = () => {
         console.log(err);
       });
   };
-  let history = useHistory();
+
   const editProfileInfo = () => {
     //provides the info for the specific user that is logged in.
     axiosWithAuth()
