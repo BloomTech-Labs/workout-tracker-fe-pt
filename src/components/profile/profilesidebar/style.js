@@ -15,6 +15,11 @@ export const FormContainer = styled.div`
   margin-top: 1.5rem;
 `;
 
+export const UsernameContainer = styled.div`
+display: flex;
+align-items: baseline;
+`;
+
 export const ProfileAside = styled.aside`
   border-right: 2px solid #dddddd;
   display: flex;
@@ -50,6 +55,7 @@ export const UserName = styled.p`
   font-size: 18px;
   font-weight: 500;
   margin-top: 1rem;
+  margin-right: 0.5rem;
 `;
 
 export const Bio = styled.p`

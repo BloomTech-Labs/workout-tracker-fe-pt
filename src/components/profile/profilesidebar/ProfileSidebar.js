@@ -9,8 +9,9 @@ import {
   Container,
   FormContainer,
   ProfileAside,
-  UserName,
+  UserName, UsernameContainer,
 } from "./style";
+import VerifiedUser from "../verifieduser/VerifiedUser";
 
 const ProfileSidebar = () => {
   const { userInfo } = useContext(ProfileContext);
@@ -21,7 +22,10 @@ const ProfileSidebar = () => {
         <ProfileAside>
           <AsideTitle> Profile </AsideTitle>
           <img src={ProfilePic} alt="Profile Avatar" />
-          <UserName>{userInfo.username}</UserName>
+          <UsernameContainer>
+            <UserName>{userInfo.username}</UserName>
+            <VerifiedUser />
+          </UsernameContainer>
           <Bio>{userInfo.bio}</Bio>
           <ChangePhotoButton> Change Photo </ChangePhotoButton>
         </ProfileAside>
