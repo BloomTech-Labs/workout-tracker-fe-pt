@@ -54,8 +54,7 @@ export const ChangePhotoButton = styled.button`
 export const UserName = styled.p`
   font-size: 18px;
   font-weight: 500;
-  margin-top: 1rem;
-  margin-right: 0.5rem;
+  margin: 1rem 0.5rem 0.7rem 0;
 `;
 
 export const Bio = styled.p`

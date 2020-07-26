@@ -8,9 +8,9 @@ const VerifiedUser = () => {
 
   const CheckVerification = () => {
     if (userInfo.verified === true) {
-      return <VerifiedBadge src={Verified} alt="Verified Badge" />;
+      return <VerifiedBadge src={Verified} alt="Verified Badge Enabled" />;
     } else {
-      return <VerifiedBadge src={Verified} alt="Verified Badge" />;
+      return <VerifiedBadge src={Verified} alt="Verified Badge Disabled" />;
     }
   };
   return (
