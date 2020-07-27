@@ -1,58 +1,83 @@
 import styled from "styled-components";
 
-// Mobile First
+// All form styles
+
+export const FormContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const FormHeader = styled.form`
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+`;
 
 export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-  padding: 5%;
-  justify-content: center;
   @media (min-width: 768px) {
+  }
+`;
+
+export const InnerForm = styled.div`
+  @media (min-width: 768px) {
+    margin-right: 1rem;
     width: 50%;
-    margin: 0 auto;
   }
 `;
 
 export const PageTitle = styled.h1`
-  text-align: center;
-  font-weight: 600;
-  margin-top: 1rem;
+  @media (min-width: 768px) {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 3rem 0rem 3.5rem 0rem;
+  }
 `;
 
 export const Input = styled.input`
-  padding: 3%;
-  margin-bottom: 1rem;
   border: none;
   @media (min-width: 768px) {
-    padding: 2%;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    }
+    
   }
 `;
 
 export const Label = styled.label`
-  font-weight: 500;
-  margin-bottom: 0.5rem;
   @media (min-width: 768px) {
-    margin-top: 1rem;
+    font-weight: 500;
   }
 `;
 
 export const ButtonMobileIntro = styled.button`
-  border: none;
-  background: #277fe5;
-  color: white;
-  font-size: 16px;
-  font-family: Montserrat;
-  font-weight: bold;
-  border-radius: 100px;
-  width: 158px;
-  height: 44px;
+  @media (min-width: 768px) {
+    border: none;
+    background: #277fe5;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: bold;
+    border-radius: 16px;
+    width: 121px;
+    height: 51px;
+    margin-right: 1rem;
+    :nth-child(1) {
+      background: white;
+      border: 2px solid #277fe5;
+      color: #277fe5;
+    }
+  }
 `;
 
 export const ButtonMobileContainer = styled.div`
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
   @media (min-width: 768px) {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
   }
 `;
