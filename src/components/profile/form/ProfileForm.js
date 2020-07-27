@@ -51,13 +51,14 @@ const ProfileForm = () => {
   const onSubmit = (e) => {
     editProfileInfo();
   };
+
   return (
     <>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormHeader>
           <PageTitle> Profile Information </PageTitle>
           <ButtonMobileContainer>
-            <ButtonMobileIntro type="submit">Cancel</ButtonMobileIntro>
+            <ButtonMobileIntro type="button">Cancel</ButtonMobileIntro>
             <ButtonMobileIntro type="submit">Save</ButtonMobileIntro>
           </ButtonMobileContainer>
         </FormHeader>
