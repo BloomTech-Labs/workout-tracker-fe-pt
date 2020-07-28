@@ -90,15 +90,6 @@ export const WorkoutForm = () => {
                 <SelectFont value="cardio">Cardio</SelectFont>
               </Select>
             </Label>
-
-            {/* <Input
-                id="category"
-                type="text"
-                name="workout_category"
-                placeholder="Category"
-                onChange={onChange}
-                value={formValues.workout_category}
-              /> */}
           </InputContainer>
 
           <InputContainer>
