@@ -7,6 +7,8 @@ import {
   TitleContainer,
   InputContainer,
   Label,
+  Select,
+  SelectFont,
   InputFont,
   Input,
   TextArea,
@@ -74,17 +76,29 @@ export const WorkoutForm = () => {
           </TitleContainer>
 
           <InputContainer>
-            <Label>Category</Label>
-            <InputFont>
-              <Input
+            <Label>
+              <Select
+                name="workout_category"
+                value={formValues.workout_category}
+                onChange={onChange}
+              >
+                <SelectFont value="">Please select an category</SelectFont>
+                <SelectFont value="arms">Arms</SelectFont>
+                <SelectFont value="abs">Abs</SelectFont>
+                <SelectFont value="glutes">Glutes</SelectFont>
+                <SelectFont value="legs">Legs</SelectFont>
+                <SelectFont value="cardio">Cardio</SelectFont>
+              </Select>
+            </Label>
+
+            {/* <Input
                 id="category"
                 type="text"
                 name="workout_category"
                 placeholder="Category"
                 onChange={onChange}
                 value={formValues.workout_category}
-              />
-            </InputFont>
+              /> */}
           </InputContainer>
 
           <InputContainer>
