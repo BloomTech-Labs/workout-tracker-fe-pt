@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
-import styled from "styled-components";
 import MainContainer from './feedcomponents/MainContainer';
 import CreateComment from './CreateComment';
 import {FeedBox} from './style';
+
 
 export default class feed extends Component {
     constructor(props){

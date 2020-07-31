@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components';
 import icon from '../../../assets/feed/icon.svg'
 import Axios from 'axios';
 import {axiosWithAuth} from '../../authentication/axiosWithAuth';
@@ -42,7 +41,6 @@ export default function Comments(props) {
             console.log(err);
         })
     }
-
     const getUserData = async(entity_id) =>{
         axiosWithAuth().get(`/api/feed/user/entity/${entity_id}`)
         .then(res =>{

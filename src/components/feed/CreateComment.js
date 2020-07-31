@@ -17,6 +17,7 @@ const types = {
     COMMENT: 5
 }
 
+
 export default function CreateComment(props) {
 
     const [visible, setVisible] = useState(true);
@@ -96,6 +97,7 @@ export default function CreateComment(props) {
                     </Title>
                     {sort(postData)}
                 </MiddleComment>
+
                 <Input>
                     <TextArea style={!visible ? {opacity: 1} : {} } onInput={(e) => setValue(e)} onClick={() => changeVisible()} contentEditable="true" >
                         {visible ? 'Write your comment...' : ''}
@@ -109,6 +111,4 @@ export default function CreateComment(props) {
         </>
     )
 }
-
-
 
