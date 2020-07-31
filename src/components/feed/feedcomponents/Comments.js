@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import icon from '../../../assets/feed/icon.svg'
 import Axios from 'axios';
@@ -33,8 +34,7 @@ export default function Comments(props) {
     }
 
     const getLikes = async() =>{
-        axiosWithAuth().get(`api/likes/post/${props.obj.entity_id}`).then(res =>{
-            console.log(res);
+        axiosWithAuth().get(`api/likes/post/${props.data.this_entity_id}`).then(res =>{
             setLikes(res.data.message);
         })
         .catch(err =>{
@@ -44,7 +44,7 @@ export default function Comments(props) {
     const getUserData = async(entity_id) =>{
         axiosWithAuth().get(`/api/feed/user/entity/${entity_id}`)
         .then(res =>{
-            setUser(res.message);
+            setUser(res.data.message);
         })
         .catch(err =>{
             console.log(err);
@@ -52,15 +52,15 @@ export default function Comments(props) {
     }
 
     const like = async() =>{
-        console.log(likes);
         let isLiked = false;
+        // eslint-disable-next-line array-callback-return
         await likes.map(res =>{
             if(decode(localStorage.getItem('token')).id === res.id){
                 isLiked = true;
             }
         })
         if(isLiked){
-            axiosWithAuth().delete(`api/likes/${props.obj.entity_id}`)
+            axiosWithAuth().delete(`api/likes/${props.data.this_entity_id}`)
             .then(response =>{
                 getLikes();
             })
@@ -68,7 +68,7 @@ export default function Comments(props) {
                 console.log(err);
             })
         } else {
-            axiosWithAuth().post(`api/likes/${props.obj.entity_id}`)
+            axiosWithAuth().post(`api/likes/${props.data.this_entity_id}`)
                 .then(response =>{
                     getLikes();
                 })
@@ -79,7 +79,7 @@ export default function Comments(props) {
     }
     
     return (
-        <Comment> {console.log(props)}
+        <Comment>
             <div>
                 <div onClick={() => setIsOpen(!isopen)}>
                     <Title>

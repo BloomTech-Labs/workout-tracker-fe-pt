@@ -37,6 +37,9 @@ export const Top = styled.div`
 export const MiddleComment = styled.div`
     width: 100%;
     display:flex;
+    flex-wrap: wrap;
+    background-color: rgb(21, 32, 43);
+    color: white;
 `
 
 
@@ -47,6 +50,7 @@ export const Ico = styled.img`
 
 export const Name = styled.h1`
     padding-left: .5em;
+    text-transform:capitalize;
 `
 
 export const Container = styled.div`
@@ -62,6 +66,13 @@ export const Container = styled.div`
 export const Title = styled.div`
     display: flex;
     align-items:center;
+`
+
+export const Content = styled.div`
+    padding-left: 2em;
+    padding-bottom: 1em;
+    width: 100%;
+    border-bottom: 1px solid gray;
 `
 
 export const Bottom = styled.div`
@@ -83,6 +94,11 @@ export const Submit = styled.div`
     border-radius: 10px;
     height: 90%;
     cursor: pointer;
+`
+
+export const Wrapper = styled.div`
+    width:100%;
+    display:flex;
 `
 
 export const Middle = styled.div`

@@ -1,13 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import {axiosWithAuth} from '../authentication/axiosWithAuth';
 import Workout from './feedcomponents/workout';
 import Routine from './feedcomponents/routine';
 import Diet from './feedcomponents/diet';
 import Mealplan from './feedcomponents/mealplan';
-import {Background, CommentForm, Middle, Top, MiddleComment, Ico, Title, Name, Svg, Input, TextArea,
-    Bottom, Submit
-} from './style'
+import CommentHead from './feedcomponents/CommentHead';
 import  icon from './../../assets/feed/icon.svg';
+import {Background, CommentForm, Middle, Top, MiddleComment, Ico, Title, Name, Svg, Input, TextArea,
+    Bottom, Submit, Content
+} from './style'
+import { useHistory, useLocation } from "react-router-dom";
+
+
 
 const types = {
     WORKOUT: 1,
@@ -23,11 +28,13 @@ export default function CreateComment(props) {
     const [visible, setVisible] = useState(true);
     const [text, setText] = useState('')
     const [postData, setPostData] = useState('');
+    let history = useHistory();
+    let location = useLocation();
 
     useEffect(() => {
         axiosWithAuth().get(`/api/feed/entity/${props.id}`)
         .then(res =>{
-            setPostData(res.message);
+            setPostData(res.data.message);
         })
         .catch(err =>{
             console.log(err);
@@ -45,6 +52,8 @@ export default function CreateComment(props) {
                 return(<Diet key={obj.entity_id} data={obj} />)
             case types.MEALPLAN:
                 return(<Mealplan key={obj.entity_id} data={obj} />)
+            case types.COMMENT:
+                return(<CommentHead key={obj.entity_id} data={obj} />)
             default:
                     console.log('problem with the displaying feeds')
                 break;
@@ -69,9 +78,12 @@ export default function CreateComment(props) {
             comment_data: text
         })
         .then(res =>{
-            console.log('success:' + res);
             removeComment();
-            window.location.reload(false);
+            if(location.pathname === `/feed/${props.id}`){
+                window.location.reload(false);
+            }else {
+                history.push(`/feed/${props.id}`);
+            }
         })
         .catch(err =>{
             console.log(err);
@@ -79,23 +91,25 @@ export default function CreateComment(props) {
     }
 
     return (
-        <>{console.log(props)}
+        <>
         <Background> </Background>
         <CommentForm>
             <Middle>
                 <Top>
                      <Svg width='50' height='50' onClick={() => removeComment()} >
                          <g>
-                         <path d="M13.414 12l5.793-5.793c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0L12 10.586 6.207 4.793c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L10.586 12l-5.793 5.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293L12 13.414l5.793 5.793c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L13.414 12z"></path>
+                            <path d="M13.414 12l5.793-5.793c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0L12 10.586 6.207 4.793c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L10.586 12l-5.793 5.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293L12 13.414l5.793 5.793c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L13.414 12z"></path>
                          </g>
                      </Svg>
                 </Top>
                 <MiddleComment>
-                    <Title>
+                    <Title style={{width: '100%'}}>
                         <Ico src={icon} alt='icon' />
                         <Name>{postData !== '' ? postData.user.username : ''}</Name>
                     </Title>
-                    {sort(postData)}
+                    <Content>
+                        {sort(postData)}
+                    </Content>
                 </MiddleComment>
 
                 <Input>
