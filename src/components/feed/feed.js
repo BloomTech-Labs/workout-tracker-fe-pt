@@ -3,6 +3,7 @@ import Axios from 'axios';
 import styled from "styled-components";
 import MainContainer from './feedcomponents/MainContainer';
 import CreateComment from './CreateComment';
+import {FeedBox} from './style';
 
 export default class feed extends Component {
     constructor(props){
@@ -60,11 +61,3 @@ export default class feed extends Component {
         )
     }
 }
-
-const FeedBox = styled.div`
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-around;
-    width: 50%;
-    margin: 0 auto;
-`

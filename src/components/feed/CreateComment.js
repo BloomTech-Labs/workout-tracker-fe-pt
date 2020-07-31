@@ -1,11 +1,54 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
+import React, {useState, useEffect} from 'react';
 import {axiosWithAuth} from '../authentication/axiosWithAuth';
+import Workout from './feedcomponents/workout';
+import Routine from './feedcomponents/routine';
+import Diet from './feedcomponents/diet';
+import Mealplan from './feedcomponents/mealplan';
+import {Background, CommentForm, Middle, Top, MiddleComment, Ico, Title, Name, Svg, Input, TextArea,
+    Bottom, Submit
+} from './style'
+import  icon from './../../assets/feed/icon.svg';
+
+const types = {
+    WORKOUT: 1,
+    ROUTINE: 2,
+    DIET: 3,
+    MEALPLAN: 4,
+    COMMENT: 5
+}
 
 export default function CreateComment(props) {
 
     const [visible, setVisible] = useState(true);
     const [text, setText] = useState('')
+    const [postData, setPostData] = useState('');
+
+    useEffect(() => {
+        axiosWithAuth().get(`/api/feed/entity/${props.id}`)
+        .then(res =>{
+            setPostData(res.message);
+        })
+        .catch(err =>{
+            console.log(err);
+        })
+    }, [])
+
+    const sort = (obj) =>{
+        console.log(obj);
+        switch(obj.type){
+            case types.WORKOUT:
+                return (<Workout key={obj.entity_id} data={obj}/>)
+            case types.ROUTINE:
+                return (<Routine key={obj.entity_id} data={obj} />)
+            case types.DIET:
+                return(<Diet key={obj.entity_id} data={obj} />)
+            case types.MEALPLAN:
+                return(<Mealplan key={obj.entity_id} data={obj} />)
+            default:
+                    console.log('problem with the displaying feeds')
+                break;
+        }
+    }
 
     const removeComment = () => {
         props.setState({...props.state, showCreateComment: !props.state.showCreateComment})
@@ -46,6 +89,13 @@ export default function CreateComment(props) {
                          </g>
                      </Svg>
                 </Top>
+                <MiddleComment>
+                    <Title>
+                        <Ico src={icon} alt='icon' />
+                        <Name>{postData !== '' ? postData.user.username : ''}</Name>
+                    </Title>
+                    {sort(postData)}
+                </MiddleComment>
                 <Input>
                     <TextArea style={!visible ? {opacity: 1} : {} } onInput={(e) => setValue(e)} onClick={() => changeVisible()} contentEditable="true" >
                         {visible ? 'Write your comment...' : ''}
@@ -59,93 +109,6 @@ export default function CreateComment(props) {
         </>
     )
 }
-
-const CommentForm = styled.div`
-    position: fixed;
-    z-index: 2;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-`
-
-const Svg = styled.svg`
-    fill: rgb(29, 161, 242);
-    cursor: pointer;
-`
-
-const Background = styled.div`
-    position: fixed;
-    z-index: 2;
-    height: 100vh;
-    width: 100%;
-    opacity: .7;
-    background-color: gray;
-    border-bottom: 2px solid gray;
-    background-color: rgb(21, 32, 43);
-`
-
-const ThierComment = styled.div`
-    width: 100%;
-    
-`
-
-const Top = styled.div`
-    width: 100%;
-    height: 2em;
-    border-bottom: 2px solid gray;
-    background-color: rgb(21, 32, 43);
-    display: flex; 
-    line-height: 2em;
-`
-
-const Bottom = styled.div`
-    width: 100%;
-    height: 3em;
-    border-top: 2px solid gray;
-    background-color: rgb(21, 32, 43);
-    display: flex; 
-    color: white;
-    justify-content: flex-end;
-    line-height: 2.5em;
-    align-items: center;
-`
-
-const Submit = styled.div`
-    padding: 0 .5em;
-    margin-right: 1em;
-    background-color: rgb(29, 161, 242);
-    border-radius: 10px;
-    height: 90%;
-    cursor: pointer;
-`
-
-const Middle = styled.div`
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    flex-direction: column;
-`
-
-const Input = styled.div`
-    width: 100%;
-    height: 20em;
-    background-color: rgb(21, 32, 43);
-    padding-top: 5%;
-`
-
-const TextArea = styled.div`
-    margin-left: 8%;
-    width: 90%;
-    height: 100%;
-    color: white;
-    background-color: rgb(21, 32, 43);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 20px;
-    white-space: normal;
-    opacity: .7;
-`
 
 
 

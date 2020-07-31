@@ -5,11 +5,12 @@ import Workout from './workout';
 import Routine from './routine';
 import Diet from './diet';
 import Mealplan from './mealplan';
-import styled from "styled-components";
 import Axios from 'axios';
 import icon from '../../../assets/feed/icon.svg'
 import { axiosWithAuth } from '../../authentication/axiosWithAuth';
 import {decode} from 'jsonwebtoken'
+import {Ico, Name, Container, Title} from '../style';
+
 
 const types = {
     WORKOUT: 1,
@@ -112,7 +113,7 @@ export default function MainContainer(props) {
     }
 
     return ( 
-        <Container>
+        <Container>{console.log(commentData)}
             <div>
                 <div onClick={() => doComments()}>
                     <Title>
@@ -136,28 +137,3 @@ export default function MainContainer(props) {
         </Container>
     )
 }
-
-const Container = styled.div`
-    width: 100%;
-    cursor: pointer;
-    border: 1px solid black;
-    border-bottom: 0px;
-    h1 {
-            text-align:left;
-            text-transform:capitalize;
-    }
-`
-
-const Ico = styled.img`
-    width: 25px;
-    height: 25px;
-`
-
-const Name = styled.h1`
-    padding-left: .5em;
-`
-
-const Title = styled.div`
-    display: flex;
-    align-items:center;
-`
