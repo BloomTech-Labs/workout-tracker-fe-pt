@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import NavigationBar from "../navigationbar/navigationbar";
 import ProfileNav from "./profilenav/ProfileNav";
 import ProfileSidebar from "./profilesidebar/ProfileSidebar";
 
 const Profile = () => {
+
+
   return (
       <>
       <NavigationBar />
