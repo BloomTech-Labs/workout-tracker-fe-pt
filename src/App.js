@@ -11,7 +11,6 @@ import Calendar from "./components/calendar/Calendar";
 import Profile from "./components/profile/Profile";
 import LandingPage from "./components/landingpage/LandingPage";
 import ViewableWorkouts from "./components/dashboard/workouts/ViewableWorkouts";
-import ProfileForm from "./components/profile/profileform/ProfileForm";
 import { NutritionForm } from "./components/dashboard/createnutrition/NutritionForm";
 import Diets from "./components/dashboard/diets/diets";
 import Feed from "./components/feed/feed";
@@ -21,6 +20,7 @@ import AccountInformation from "./components/accountinfo/AccountInformation";
 import { decode } from "jsonwebtoken";
 import { axiosWithAuth } from "./components/authentication/axiosWithAuth";
 import ProfileContext from "./contexts/ProfileContext";
+import VerifyForm from "./components/profile/verifieduser/verifiedform/VerifyForm";
 
 function App() {
   const [userInfo, setUserInfo] = useState({});
@@ -96,12 +96,12 @@ function App() {
               <Profile />
             </ProtectedRoute>
 
-            <ProtectedRoute path="/editprofile">
-              <ProfileForm />
-            </ProtectedRoute>
-
             <ProtectedRoute path="/accountinformation">
               <AccountInformation />
+            </ProtectedRoute>
+
+            <ProtectedRoute path="/verify">
+              <VerifyForm />
             </ProtectedRoute>
 
             <ProtectedRoute path="/calendar">

@@ -20,8 +20,8 @@ const ProfileNav = () => {
         </RightSide>
       </Navigation>
       <SubNav>
-        <Links> Edit Profile </Links>
-        <Links> Account Information </Links>
+        <Links to="/profile"> Edit Profile </Links>
+        <Links to="/accountinformation"> Account Information </Links>
         <Links> Security </Links>
         <Links> Payment Information </Links>
       </SubNav>

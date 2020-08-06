@@ -8,7 +8,6 @@ import {
   ChangePhotoButton,
   Container,
   FormContainer,
-  Links,
   ProfileAside,
   UserName,
   UsernameContainer,
@@ -31,10 +30,6 @@ const ProfileSidebar = () => {
           </UsernameContainer>
           <Bio>{userInfo.bio}</Bio>
           <ChangePhotoButton> Change Photo </ChangePhotoButton>
-          <p>
-            Are you verified?
-            <Links href="mailto: verifyuser@fittracker.com">Apply</Links>
-          </p>
         </ProfileAside>
         <FormContainer>
           <ProfileForm />
