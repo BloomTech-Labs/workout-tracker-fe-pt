@@ -5,7 +5,6 @@ import ProfileSidebar from "./profilesidebar/ProfileSidebar";
 
 const Profile = () => {
 
-
   return (
       <>
       <NavigationBar />

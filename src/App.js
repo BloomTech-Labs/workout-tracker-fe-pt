@@ -25,10 +25,11 @@ import VerifyForm from "./components/profile/verifieduser/verifiedform/VerifyFor
 function App() {
   const [userInfo, setUserInfo] = useState({});
 
+
+console.log("this run next")
   const getUserInfo = () => {
     //provides the info for the specific user that is logged in.
     const { subject } = decode(localStorage.getItem("token"));
-    console.log("returns", { subject });
     axiosWithAuth()
       .get(`https://frozen-hamlet-18508.herokuapp.com/api/users/${subject}`)
       .then((res) => {
@@ -39,6 +40,7 @@ function App() {
         console.log(err);
       });
   };
+
 
   useEffect(() => {
     getUserInfo();

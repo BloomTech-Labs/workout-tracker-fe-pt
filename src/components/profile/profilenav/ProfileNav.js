@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, {useContext, useEffect} from "react";
 import {Input, Links, Logo, LogoText, Navigation, RightSide, SearchIcons, SubNav} from "./style";
 import ProfileContext from "../../../contexts/ProfileContext";
 import DefaultAvatar from "../../../assets/profilepage/defaultavatar.svg";
