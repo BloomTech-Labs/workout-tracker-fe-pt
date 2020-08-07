@@ -21,77 +21,72 @@ import VerifyForm from "./components/profile/verifieduser/verifiedform/VerifyFor
 import Review from "./components/profile/verifieduser/verifiedform/confirmation/Review";
 
 function App() {
-
   return (
-      <div className="App">
-        <div className="childRoutes">
-          <Switch>
-            <Route exact path="/">
-              <LandingPage />
-            </Route>
+    <div className="App">
+      <div className="childRoutes">
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
 
-            <Route path="/register">
-              <Register />
-            </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
 
-            <Route path="/login">
-              <Login />
-            </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
 
-            <Route exact path="/feed">
-              <Feed />
-            </Route>
+          <Route exact path="/feed">
+            <Feed />
+          </Route>
 
-            <ProtectedRoute
-              exact
-              path="/createroutine"
-              component={Routine}
-            />
+          <ProtectedRoute exact path="/createroutine" component={Routine} />
 
-            <Route exact path="/feed/:id" component={HeadFeed} />
+          <Route exact path="/feed/:id" component={HeadFeed} />
 
-            <ProtectedRoute path="/dashboard">
-              <Dashboard />
-            </ProtectedRoute>
+          <ProtectedRoute path="/dashboard">
+            <Dashboard />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/workouts">
-              <ViewableWorkouts />
-            </ProtectedRoute>
+          <ProtectedRoute path="/workouts">
+            <ViewableWorkouts />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/createworkout">
-              <WorkoutForm />
-            </ProtectedRoute>
+          <ProtectedRoute path="/createworkout">
+            <WorkoutForm />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/diets">
-              <Diets />
-            </ProtectedRoute>
+          <ProtectedRoute path="/diets">
+            <Diets />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/createnutrition">
-              <NutritionForm />
-            </ProtectedRoute>
+          <ProtectedRoute path="/createnutrition">
+            <NutritionForm />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/profile">
-              <Profile />
-            </ProtectedRoute>
+          <ProtectedRoute path="/profile">
+            <Profile />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/accountinformation">
-              <AccountInformation />
-            </ProtectedRoute>
+          <ProtectedRoute path="/accountinformation">
+            <AccountInformation />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/verify">
-              <VerifyForm />
-            </ProtectedRoute>
+          <ProtectedRoute path="/verify">
+            <VerifyForm />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/confirmation">
-              <Review />
-            </ProtectedRoute>
+          <ProtectedRoute path="/confirmation">
+            <Review />
+          </ProtectedRoute>
 
-            <ProtectedRoute path="/calendar">
-              <Calendar />
-            </ProtectedRoute>
-          </Switch>
-        </div>
+          <ProtectedRoute path="/calendar">
+            <Calendar />
+          </ProtectedRoute>
+        </Switch>
       </div>
+    </div>
   );
 }
 

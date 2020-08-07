@@ -24,7 +24,7 @@ import {
   Label,
   PageTitle,
 } from "./style";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const VerifyForm = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -164,7 +164,14 @@ const VerifyForm = () => {
         </Form>
       </FormContainer>
       {/* Only pushes to the confirmation page... Needs further work */}
-      <ButtonMobileIntro type="submit" onClick={() => {history.push("/confirmation")}}>Submit Application</ButtonMobileIntro>
+      <ButtonMobileIntro
+        type="submit"
+        onClick={() => {
+          history.push("/confirmation");
+        }}
+      >
+        Submit Application
+      </ButtonMobileIntro>
     </>
   );
 };

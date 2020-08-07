@@ -24,7 +24,13 @@ const Review = () => {
           <Title> Your application is being reviewed! </Title>
           <p> We will email you with the status of your application </p>
           <ButtonContainer>
-            <Button onClick={() => {history.push("/dashboard")}}> Return to dashboard </Button>
+            <Button
+              onClick={() => {
+                history.push("/dashboard");
+              }}
+            >
+              Return to dashboard
+            </Button>
           </ButtonContainer>
         </LeftSideContent>
         <RightSideContent>
