@@ -10,9 +10,9 @@ const AccountInformation = () => {
         <NavigationBar/>
         <ProfileNav/>
       <ButtonSection>
-          <InfoButtons> Personal Information <a href="#"><img src={RightArrow} alt="Right Arrow"/></a></InfoButtons>
-          <InfoButtons> Workouts You've Liked <a href="#"><img src={RightArrow} alt="Right Arrow"/></a></InfoButtons>
-          <InfoButtons> Language <a href="#"><img src={RightArrow} alt="Right Arrow"/></a></InfoButtons>
+          <InfoButtons title="Coming Soon"> Personal Information <a href="#"><img src={RightArrow} alt="Right Arrow"/></a></InfoButtons>
+          <InfoButtons title="Coming Soon" > Workouts You've Liked <a href="#"><img src={RightArrow} alt="Right Arrow"/></a></InfoButtons>
+          <InfoButtons title="Coming Soon" > Language <a href="#"><img src={RightArrow} alt="Right Arrow"/></a></InfoButtons>
           <ApplyTextAnchor href="/verify"><p> Apply to become Verified </p></ApplyTextAnchor>
       </ButtonSection>
 

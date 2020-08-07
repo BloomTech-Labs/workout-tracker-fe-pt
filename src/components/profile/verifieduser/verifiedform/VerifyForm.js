@@ -24,9 +24,11 @@ import {
   Label,
   PageTitle,
 } from "./style";
+import {useHistory} from "react-router-dom";
 
 const VerifyForm = () => {
   const { register, errors, handleSubmit } = useForm();
+  const history = useHistory();
   return (
     <>
       <NavigationBar />
@@ -65,17 +67,14 @@ const VerifyForm = () => {
               <Label htmlFor="email">Email</Label>
               <Input
                 type="text"
-                // value={ADD your state + backend data here.}
                 id="email"
                 label="email"
                 name="email"
                 htmlFor="email"
                 placeholder="Email"
-                // onChange={handleChange}
                 ref={register({})}
               />
 
-              {/* NOTE: Responsible for displaying the errors */}
               {errors.email && errors.email.message}
             </InnerForm>
 
@@ -83,13 +82,11 @@ const VerifyForm = () => {
               <Label htmlFor="username">Username</Label>
               <Input
                 type="text"
-                // value={ADD your state + backend data here.}
                 id="username"
                 label="username"
                 name="username"
                 htmlFor="username"
                 placeholder="Username"
-                // onChange={handleChange}
                 ref={register({
                   minLength: {
                     value: 3,
@@ -98,7 +95,6 @@ const VerifyForm = () => {
                 })}
               />
 
-              {/* NOTE: Responsible for displaying the errors */}
               {errors.username && errors.username.message}
             </InnerForm>
           </FormContainer>
@@ -108,7 +104,6 @@ const VerifyForm = () => {
               <Label htmlFor="firstname">First Name</Label>
               <Input
                 type="text"
-                // value={ADD your state + backend data here.}
                 id="firstname"
                 label="firstname"
                 name="firstname"
@@ -123,7 +118,6 @@ const VerifyForm = () => {
                 })}
               />
 
-              {/* NOTE: Responsible for displaying the errors */}
               {errors.firstname && errors.firstname.message}
             </InnerForm>
 
@@ -131,13 +125,11 @@ const VerifyForm = () => {
               <Label htmlFor="lastname">Last Name</Label>
               <Input
                 type="text"
-                // value={ADD your state + backend data here.}
                 id="lastname"
                 label="lastname"
                 name="lastname"
                 htmlFor="lastname"
                 placeholder="Last Name"
-                // onChange={handleChange}
                 ref={register({
                   minLength: {
                     value: 3,
@@ -146,7 +138,6 @@ const VerifyForm = () => {
                 })}
               />
 
-              {/* NOTE: Responsible for displaying the errors */}
               {errors.lastname && errors.lastname.message}
             </InnerForm>
           </FormContainer>
@@ -156,13 +147,11 @@ const VerifyForm = () => {
           </Label>
           <Input
             type="text"
-            // value={ADD your state + backend data here.}
             id="explain"
             label="explain"
             name="explain"
             htmlFor="explain"
             placeholder="Brief explanation on why you should be verified."
-            // onChange={handleChange}
             ref={register({
               minLength: {
                 value: 3,
@@ -171,11 +160,11 @@ const VerifyForm = () => {
             })}
           />
 
-          {/* NOTE: Responsible for displaying the errors */}
           {errors.email && errors.email.message}
         </Form>
       </FormContainer>
-      <ButtonMobileIntro type="submit">Send</ButtonMobileIntro>
+      {/* Only pushes to the confirmation page... Needs further work */}
+      <ButtonMobileIntro type="submit" onClick={() => {history.push("/confirmation")}}>Submit Application</ButtonMobileIntro>
     </>
   );
 };

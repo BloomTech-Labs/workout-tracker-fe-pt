@@ -18,6 +18,7 @@ import HeadFeed from "./components/feed/feedcomponents/HeadFeed";
 import Routine from "./components/dashboard/createroutine/Routine";
 import AccountInformation from "./components/accountinfo/AccountInformation";
 import VerifyForm from "./components/profile/verifieduser/verifiedform/VerifyForm";
+import Review from "./components/profile/verifieduser/verifiedform/confirmation/Review";
 
 function App() {
 
@@ -79,6 +80,10 @@ function App() {
 
             <ProtectedRoute path="/verify">
               <VerifyForm />
+            </ProtectedRoute>
+
+            <ProtectedRoute path="/confirmation">
+              <Review />
             </ProtectedRoute>
 
             <ProtectedRoute path="/calendar">

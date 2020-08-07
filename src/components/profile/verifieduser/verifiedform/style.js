@@ -119,9 +119,9 @@ export const ButtonMobileIntro = styled.button`
     font-family: Montserrat;
     font-weight: bold;
     border-radius: 16px;
-    width: 121px;
+    width: 300px;
     height: 51px;
-    margin: 5rem 0rem 5rem 65rem;
+    margin: 5rem 0rem 5rem 58rem;
   }
 `;
 
