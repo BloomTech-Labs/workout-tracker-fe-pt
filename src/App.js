@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 //components
 import Register from "./components/register/register";
@@ -17,37 +17,11 @@ import Feed from "./components/feed/feed";
 import HeadFeed from "./components/feed/feedcomponents/HeadFeed";
 import Routine from "./components/dashboard/createroutine/Routine";
 import AccountInformation from "./components/accountinfo/AccountInformation";
-import { decode } from "jsonwebtoken";
-import { axiosWithAuth } from "./components/authentication/axiosWithAuth";
-import ProfileContext from "./contexts/ProfileContext";
 import VerifyForm from "./components/profile/verifieduser/verifiedform/VerifyForm";
 
 function App() {
-  const [userInfo, setUserInfo] = useState({});
-
-
-console.log("this run next")
-  const getUserInfo = () => {
-    //provides the info for the specific user that is logged in.
-    const { subject } = decode(localStorage.getItem("token"));
-    axiosWithAuth()
-      .get(`https://frozen-hamlet-18508.herokuapp.com/api/users/${subject}`)
-      .then((res) => {
-        setUserInfo(res.data);
-        console.log("res.data", res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-
-  useEffect(() => {
-    getUserInfo();
-  }, []);
 
   return (
-    <ProfileContext.Provider value={{ userInfo, setUserInfo }}>
       <div className="App">
         <div className="childRoutes">
           <Switch>
@@ -71,7 +45,7 @@ console.log("this run next")
               exact
               path="/createroutine"
               component={Routine}
-            ></ProtectedRoute>
+            />
 
             <Route exact path="/feed/:id" component={HeadFeed} />
 
@@ -113,7 +87,6 @@ console.log("this run next")
           </Switch>
         </div>
       </div>
-    </ProfileContext.Provider>
   );
 }
 

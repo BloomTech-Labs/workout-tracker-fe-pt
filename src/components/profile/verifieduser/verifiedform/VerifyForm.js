@@ -3,12 +3,13 @@ import ProfileNav from "../../profilenav/ProfileNav";
 import NavigationBar from "../../../navigationbar/navigationbar";
 import { useForm } from "react-hook-form";
 import {
-  FormSection,
+  Badge,
   ImageContainer,
   InformationContent,
   InfoText,
   InfoTitle,
   IntroSection,
+  LeftArrowNavigate,
 } from "./style";
 import LeftArrow from "../../../../assets/profilepage/leftarrow.svg";
 import CheckMark from "../../../../assets/profilepage/checkmark.svg";
@@ -30,11 +31,13 @@ const VerifyForm = () => {
     <>
       <NavigationBar />
       <ProfileNav />
-      <img src={LeftArrow} alt="Left Arrow" />
+      <a href="/accountinformation">
+        <LeftArrowNavigate src={LeftArrow} alt="Left Arrow" />
+      </a>
       <IntroSection>
         <InformationContent>
           <InfoTitle>
-            Apply to become Verified <img src={CheckMark} />
+            Apply to become Verified <Badge src={CheckMark} />
           </InfoTitle>
           <InfoText>
             When you become verified a blue checkmark will appear next to the
@@ -49,7 +52,7 @@ const VerifyForm = () => {
           </InfoText>
         </InformationContent>
         <ImageContainer>
-          <img src={WorkoutTrainer} />
+          <img src={WorkoutTrainer} alt="workout trainer" />
         </ImageContainer>
       </IntroSection>
       <FormContainer>
@@ -62,15 +65,14 @@ const VerifyForm = () => {
               <Label htmlFor="email">Email</Label>
               <Input
                 type="text"
-                // value={editProfile.username}
+                // value={ADD your state + backend data here.}
                 id="email"
                 label="email"
                 name="email"
                 htmlFor="email"
                 placeholder="Email"
                 // onChange={handleChange}
-                ref={register({
-                })}
+                ref={register({})}
               />
 
               {/* NOTE: Responsible for displaying the errors */}
@@ -81,7 +83,7 @@ const VerifyForm = () => {
               <Label htmlFor="username">Username</Label>
               <Input
                 type="text"
-                // value={editProfile.email}
+                // value={ADD your state + backend data here.}
                 id="username"
                 label="username"
                 name="username"
@@ -103,15 +105,15 @@ const VerifyForm = () => {
 
           <FormContainer>
             <InnerForm>
-              <Label htmlFor="firstname">First name</Label>
+              <Label htmlFor="firstname">First Name</Label>
               <Input
                 type="text"
-                // value={editProfile.username}
+                // value={ADD your state + backend data here.}
                 id="firstname"
                 label="firstname"
                 name="firstname"
                 htmlFor="firstname"
-                placeholder="First name"
+                placeholder="First Name"
                 // onChange={handleChange}
                 ref={register({
                   minLength: {
@@ -126,15 +128,15 @@ const VerifyForm = () => {
             </InnerForm>
 
             <InnerForm>
-              <Label htmlFor="lastname">Last name</Label>
+              <Label htmlFor="lastname">Last Name</Label>
               <Input
                 type="text"
-                // value={editProfile.email}
+                // value={ADD your state + backend data here.}
                 id="lastname"
                 label="lastname"
                 name="lastname"
                 htmlFor="lastname"
-                placeholder="lastname"
+                placeholder="Last Name"
                 // onChange={handleChange}
                 ref={register({
                   minLength: {
@@ -149,15 +151,17 @@ const VerifyForm = () => {
             </InnerForm>
           </FormContainer>
 
-          <Label htmlFor="explain">Tell us why this account should be verified. </Label>
+          <Label htmlFor="explain">
+            Tell us why this account should be verified.
+          </Label>
           <Input
             type="text"
-            // value={editProfile.bio}
+            // value={ADD your state + backend data here.}
             id="explain"
             label="explain"
             name="explain"
             htmlFor="explain"
-            placeholder="explain"
+            placeholder="Brief explanation on why you should be verified."
             // onChange={handleChange}
             ref={register({
               minLength: {

@@ -21,7 +21,18 @@ export const InfoButtons = styled.button`
     justify-content: space-between;
     border-radius: 5px;
     &:hover {
-        background: #d5d5d5;
+      background: #d5d5d5;
+    }
+  }
+`;
+
+export const ApplyTextAnchor = styled.a`
+  @media (min-width: 768px) {
+    color: #277fe5;
+    margin-top: 45px;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
     }
   }
 `;
