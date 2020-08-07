@@ -15,9 +15,8 @@ import {
 import VerifiedUser from "../verifieduser/VerifiedUser";
 
 const ProfileSidebar = () => {
-  console.log();
   const { userInfo } = useContext(ProfileContext);
-
+  
   return (
     <>
       <Container>
@@ -28,6 +27,9 @@ const ProfileSidebar = () => {
             <UserName>{userInfo.username}</UserName>
             <VerifiedUser />
           </UsernameContainer>
+          <div>
+          <p>{userLikes} Likes</p>
+          </div>
           <Bio>{userInfo.bio}</Bio>
           <ChangePhotoButton> Change Photo </ChangePhotoButton>
         </ProfileAside>
