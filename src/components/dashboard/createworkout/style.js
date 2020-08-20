@@ -103,7 +103,7 @@ export const InputFont = styled.h3`
 
 export const ShareBox = styled.div`
 display: flex;
-align items: center;
+align-items: center;
 margin-bottom: 20%;
 @media (min-width: 768px) {
     margin-bottom: 20%;
