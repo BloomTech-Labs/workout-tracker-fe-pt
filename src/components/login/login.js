@@ -28,7 +28,10 @@ import PasswordImage from "../../assets/loginpage/password.svg";
 import SmFullCircle from "../../assets/loginpage/smfullsircle.svg";
 export default function Login() {
   const history = useHistory();
-  const { register, handleSubmit, errors, formState } = useForm();
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onBlur",
+  });
+  
   const onSubmit = (user, e) => {
     console.log("User details", user)
     e.preventDefault();
