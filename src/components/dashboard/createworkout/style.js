@@ -111,7 +111,6 @@ margin-bottom: 20%;
 `;
 
 export const ErrorMessages = styled.div`
-  /* margin-bottom: 2rem; */
   display: flex;
   justify-content: center;
   color: red;
