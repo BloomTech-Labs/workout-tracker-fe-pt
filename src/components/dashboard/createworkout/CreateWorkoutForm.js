@@ -151,7 +151,7 @@ export const WorkoutForm = () => {
                 onChange={onChange}
                 value={formValues.workout_date}
                 ref={register({
-                  required: "A date is required"
+                  required: "A valid date is required"
                 })}
               />
             </InputFont>
