@@ -90,6 +90,7 @@ export const NutritionForm = () => {
   return (
     <>
       <MobileNav />
+      <div style={{display: 'flex'}}>
       <NavigationBar />
       <Form>
         <FoodImg src={Food}/>
@@ -367,6 +368,7 @@ export const NutritionForm = () => {
           </ButtonContainer>
         </InnerForm>
       </Form>
+      </div>
     </>
   );
 };
