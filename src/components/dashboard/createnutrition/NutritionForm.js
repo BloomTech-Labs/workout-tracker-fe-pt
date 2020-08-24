@@ -58,7 +58,7 @@ export const NutritionForm = () => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(formValues);
     axiosWithAuth()
       .post("https://frozen-hamlet-18508.herokuapp.com/api/diets", formValues)
@@ -145,7 +145,7 @@ export const NutritionForm = () => {
             <InputFont>
               <Input
                 id="time"
-                type="text"
+                type="time"
                 name="meal_time"
                 placeholder="Example: 2:00 pm"
                 onChange={onChange}
