@@ -40,7 +40,7 @@ const initialFormValue = {
 };
 
 export const NutritionForm = () => {
-  const [setNutrition] = useState([]);
+  const [nutrition, setNutrition] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValue);
 
   const { register, handleSubmit, errors, formState } = useForm({
@@ -58,7 +58,6 @@ export const NutritionForm = () => {
   };
 
   const onSubmit = (e) => {
-    // e.preventDefault();
     console.log(formValues);
     axiosWithAuth()
       .post("https://frozen-hamlet-18508.herokuapp.com/api/diets", formValues)
