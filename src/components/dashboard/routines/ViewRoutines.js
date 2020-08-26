@@ -137,8 +137,10 @@ export default class ViewRoutines extends Component {
     return (
       <>
         <MobileNav />
+        <div style={{display: 'flex'}}>
         <NavigationBar />
         <MainContainer>
+          <div>
           <Header>
             <h1> Explore Your Routines</h1>
           </Header>
@@ -164,7 +166,9 @@ export default class ViewRoutines extends Component {
             </>
           ))}
           {this.state.edit ? this.showEdit() : null}
+          </div>
         </MainContainer>
+        </div>
       </>
     );
   }
